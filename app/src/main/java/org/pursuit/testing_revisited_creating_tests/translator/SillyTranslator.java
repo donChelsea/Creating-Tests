@@ -61,8 +61,12 @@ public class SillyTranslator implements SillyTranslatorInterface {
 
     @Override
     public String reverse(String input) {
-        StringBuilder stringBuilder = new StringBuilder(input);
-        return stringBuilder.reverse().toString();
+        if (input == null || input.equals("")) {
+            return "";
+        }
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(input).reverse();
+        return stringBuilder.toString();
     }
 
     @Override
@@ -83,7 +87,7 @@ public class SillyTranslator implements SillyTranslatorInterface {
 
     @Override
     public String sarcasticRebuttal(String input) {
-        if (input.length() == 0) {
+        if (input == null || input.length() == 0) {
             return "";
         }
 

@@ -8,8 +8,6 @@ import org.pursuit.testing_revisited_creating_tests.translator.SillyTranslator;
 
 public class SillyTranslatorUnitTest {
 
-    // TODO: add setup method
-
     public void SillyTranslator_testGetInstance() {
         SillyTranslator result = SillyTranslator.getInstance();
         SillyTranslator result2 = SillyTranslator.getInstance();
@@ -307,10 +305,124 @@ public class SillyTranslatorUnitTest {
 
     // reverse
 
+    @Test
+    public void checkReverseWithNullInput() {
+        String testString = null;
+        String expectedResult = "";
 
+        String result = SillyTranslator.getInstance().reverse(testString);
 
-    // TODO: add test for every method with a non-void return type in SillyTranslator.java
+        Assert.assertEquals(expectedResult, result);
+    }
 
-    // TODO: add tear down method
+    @Test
+    public void checkReverseWithEmptyInput() {
+        String testString = "";
+        String expectedResult = "";
+
+        String result = SillyTranslator.getInstance().reverse(testString);
+
+        Assert.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void checkSarcasticRebuttalWithNullInput() {
+        String testString = null;
+        String expectedResult = "";
+
+        String result = SillyTranslator.getInstance().sarcasticRebuttal(testString);
+
+        Assert.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void checkSarcasticRebuttalWitEmptyInput() {
+        String testString = "";
+        String expectedResult = "";
+
+        String result = SillyTranslator.getInstance().sarcasticRebuttal(testString);
+
+        Assert.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void checkElideWithInvalidInput() {
+        String testString = "false";
+        String expectedResult = "false";
+
+        String result = SillyTranslator.getInstance().elide(testString);
+
+        Assert.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void checkElideWithEmptyInput() {
+        String testString = "";
+        String expectedResult = "";
+
+        String result = SillyTranslator.getInstance().elide(testString);
+
+        Assert.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void checkSillyCaseWithEmptyInput() {
+        String testString = "";
+        String expectedResult = "";
+
+        String result = SillyTranslator.getInstance().sillyCase(testString);
+
+        Assert.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void checkSillyCaseWithNumberInput() {
+        String testString = "1234";
+        String expectedResult = "1234";
+
+        String result = SillyTranslator.getInstance().sillyCase(testString);
+
+        Assert.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void checkDeVowelWithEmptyInput() {
+        String testString = "";
+        String expectedResult = "";
+
+        String result = SillyTranslator.getInstance().deVowel(testString);
+
+        Assert.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void checkDeVowelWithAllVowelInput() {
+        String testString = "aeiou";
+        String expectedResult = "";
+
+        String result = SillyTranslator.getInstance().deVowel(testString);
+
+        Assert.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void checkDeConsonantWithAllConsonants() {
+        String testString = "bdcfg";
+        String expectedResult = "";
+
+        String result = SillyTranslator.getInstance().deConsonant(testString);
+
+        Assert.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void checkDeConsonantWithEmptyInput() {
+        String testString = "";
+        String expectedResult = "";
+
+        String result = SillyTranslator.getInstance().deConsonant(testString);
+
+        Assert.assertEquals(expectedResult, result);
+    }
 
 }
